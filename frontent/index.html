@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Análisis de Resonancia Magnética ML</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Cargar Imagen para Análisis</h1>
+        
+        <form id="upload-form" method="POST" enctype="multipart/form-data">
+            <input type="file" id="image-input" name="image" accept="image/*" required>
+            <input type="text" id="patient-id" name="patient_id" placeholder="ID del Paciente (Opcional)">
+            <button type="submit">Analizar Imagen</button>
+        </form>
+        <div id="loading" style="display: none;">Cargando y Analizando...</div>
+
+        <div id="results" style="display: none;">
+            <h2>Resultados del Análisis</h2>
+            <p><strong>Diagnóstico:</strong> <span id="diagnosis"></span></p>
+            <p><strong>Confianza:</strong> <span id="confidence"></span></p>
+
+            <div class="image-display">
+                <div class="image-box">
+                    <h3>Original</h3>
+                    <img id="img-original" alt="Imagen Original">
+                </div>
+                <div class="image-box">
+                    <h3>Analizada</h3>
+                    <img id="img-analyzed" alt="Imagen Analizada">
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
